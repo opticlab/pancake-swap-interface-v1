@@ -559,8 +559,8 @@ export default function RemoveLiquidity({
                           ) : oneCurrencyIsWETH ? (
                             <StyledInternalLink
                               to={`/remove/${
-                                currencyA && currencyEquals(currencyA, WETH[chainId]) ? 'BNB' : currencyIdA
-                              }/${currencyB && currencyEquals(currencyB, WETH[chainId]) ? 'BNB' : currencyIdB}`}
+                                currencyA && currencyEquals(currencyA, WETH[chainId]) ? 'KLAY' : currencyIdA
+                              }/${currencyB && currencyEquals(currencyB, WETH[chainId]) ? 'KLAY' : currencyIdB}`}
                             >
                               {TranslateString(1190, 'Receive BNB')}
                             </StyledInternalLink>

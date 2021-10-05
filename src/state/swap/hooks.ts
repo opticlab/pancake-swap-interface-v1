@@ -33,7 +33,7 @@ export function useSwapActionHandlers(): {
       dispatch(
         selectCurrency({
           field,
-          currencyId: currency instanceof Token ? currency.address : currency === ETHER ? 'BNB' : '',
+          currencyId: currency instanceof Token ? currency.address : currency === ETHER ? 'KLAY' : '',
         })
       )
     },
@@ -87,9 +87,9 @@ export function tryParseAmount(value?: string, currency?: Currency): CurrencyAmo
 }
 
 const BAD_RECIPIENT_ADDRESSES: string[] = [
-  '0xBCfCcbde45cE874adCB698cC183deBcF17952812', // v2 factory
-  '0xf164fC0Ec4E93095b804a4795bBe1e041497b92a', // v2 router 01
-  '0x05fF2B0DB69458A0750badebc4f9e13aDd608C7F', // v2 router 02
+  '0xdad204405b2dfaaccc5c2c864757a6fa0ae87922', // v2 factory
+  '0x5646087e964e752CecE1e692Bf5cC1A3e027905e', // v2 router 01
+  '0xf5C42f42c0b069Ea1116FE35b4149d78eE6E4ECD', // v2 router 02
 ]
 
 /**
@@ -201,10 +201,10 @@ function parseCurrencyFromURLParameter(urlParam: any): string {
   if (typeof urlParam === 'string') {
     const valid = isAddress(urlParam)
     if (valid) return valid
-    if (urlParam.toUpperCase() === 'BNB') return 'BNB'
-    if (valid === false) return 'BNB'
+    if (urlParam.toUpperCase() === 'KLAY') return 'KLAY'
+    if (valid === false) return 'KLAY'
   }
-  return 'BNB' ?? ''
+  return 'KLAY' ?? ''
 }
 
 function parseTokenAmountURLParameter(urlParam: any): string {
