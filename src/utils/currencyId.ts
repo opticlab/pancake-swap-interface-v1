@@ -1,4 +1,4 @@
-import { Currency, ETHER, Token } from '@pancakeswap-libs/sdk'
+import { Currency, ETHER, Token } from '@opticlab/kdex-sdk'
 
 export function currencyId(currency: Currency): string {
   if (currency === ETHER) return 'KLAY'

@@ -1,4 +1,4 @@
-import { Currency, ETHER, Token } from '@pancakeswap-libs/sdk'
+import { Currency, ETHER, Token } from '@opticlab/kdex-sdk'
 import React, { KeyboardEvent, RefObject, useCallback, useContext, useEffect, useMemo, useRef, useState } from 'react'
 import { Text, CloseIcon } from '@pancakeswap-libs/uikit'
 import { useSelector } from 'react-redux'
@@ -59,7 +59,7 @@ export function CurrencySearch({
 
   const showETH: boolean = useMemo(() => {
     const s = searchQuery.toLowerCase().trim()
-    return s === '' || s === 'b' || s === 'bn' || s === 'bnb'
+    return s === '' || s === 'k' || s === 'kl' || s === 'kla' || s === 'klay'
   }, [searchQuery])
 
   const tokenComparator = useTokenComparator(invertSearchOrder)
@@ -120,7 +120,7 @@ export function CurrencySearch({
     (e: KeyboardEvent<HTMLInputElement>) => {
       if (e.key === 'Enter') {
         const s = searchQuery.toLowerCase().trim()
-        if (s === 'bnb') {
+        if (s === 'klay') {
           handleCurrencySelect(ETHER)
         } else if (filteredSortedTokens.length > 0) {
           if (
