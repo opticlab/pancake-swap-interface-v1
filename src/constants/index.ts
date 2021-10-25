@@ -1,6 +1,6 @@
 import { ChainId, JSBI, Percent, Token, WETH } from '@opticlab/kdex-sdk'
 
-export const ROUTER_ADDRESS = '0xbe409ad1be92193461cf3285a60bd1b6cfb90b23'
+export const ROUTER_ADDRESS = '0xe85667bCEf9dbF45daE8A799c5cA8ADf136248AB'
 
 // a list of tokens by chain
 type ChainTokenList = {
@@ -8,7 +8,7 @@ type ChainTokenList = {
 }
 
 export const CAKE = new Token(ChainId.MAINNET, '0x0E09FaBB73Bd3Ade0a17ECC321fD13a19e81cE82', 18, 'CAKE', 'PancakeSwap Token')
-export const WBNB = new Token(ChainId.MAINNET, '0x5c9c987e08bed353a5c304b76ccca6f316b28847', 18, 'WKLAY', 'Wrapped KLAY')
+export const WBNB = new Token(ChainId.MAINNET, '0x5c9c987E08Bed353A5C304b76CCCA6f316B28847', 18, 'WKLAY', 'Wrapped KLAY')
 export const DAI = new Token(ChainId.MAINNET, '0x1AF3F329e8BE154074D8769D1FFa4eE058B1DBc3', 18, 'DAI', 'Dai Stablecoin')
 export const BUSD = new Token(ChainId.MAINNET, '0xe9e7CEA3DedcA5984780Bafc599bD69ADd087D56', 18, 'BUSD', 'Binance USD')
 export const BTCB = new Token(ChainId.MAINNET, '0x7130d2A12B9BCbFAe4f2634d864A1Ee1Ce3Ead9c', 18, 'BTCB', 'Binance BTC')
