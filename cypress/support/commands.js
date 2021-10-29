@@ -4,7 +4,7 @@
 // https://on.cypress.io/custom-commands
 // ***********************************************
 
-import { JsonRpcProvider } from '@ethersproject/providers'
+import { JsonRpcProvider } from 'klaytn-providers'
 import { Wallet } from '@ethersproject/wallet'
 import { _Eip1193Bridge } from '@ethersproject/experimental/lib/eip1193-bridge'
 

@@ -3,7 +3,7 @@ import styled from 'styled-components'
 import { Text } from '@pancakeswap-libs/uikit'
 import useI18n from 'hooks/useI18n'
 import useENS from '../../hooks/useENS'
-import { useActiveWeb3React } from '../../hooks'
+import { useActiveCaverJsReact } from '../../hooks'
 import { ExternalLink } from '../Shared'
 import { AutoColumn } from '../Column'
 import { RowBetween } from '../Row'
@@ -79,7 +79,7 @@ export default function AddressInputPanel({
   // triggers whenever the typed value changes
   onChange: (value: string) => void
 }) {
-  const { chainId } = useActiveWeb3React()
+  const { chainId } = useActiveCaverJsReact()
   const TranslateString = useI18n()
   const { address, loading, name } = useENS(value)
 

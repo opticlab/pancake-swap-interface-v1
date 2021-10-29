@@ -1,8 +1,8 @@
-import { TransactionResponse } from '@ethersproject/providers'
+import { TransactionResponse } from 'klaytn-providers'
 import { useCallback, useMemo } from 'react'
 import { useDispatch, useSelector } from 'react-redux'
 
-import { useActiveWeb3React } from '../../hooks'
+import { useActiveCaverJsReact } from '../../hooks'
 import { AppDispatch, AppState } from '../index'
 import { addTransaction } from './actions'
 import { TransactionDetails } from './reducer'
@@ -12,7 +12,7 @@ export function useTransactionAdder(): (
   response: TransactionResponse,
   customData?: { summary?: string; approval?: { tokenAddress: string; spender: string } }
 ) => void {
-  const { chainId, account } = useActiveWeb3React()
+  const { chainId, account } = useActiveCaverJsReact()
   const dispatch = useDispatch<AppDispatch>()
 
   return useCallback(
@@ -35,7 +35,7 @@ export function useTransactionAdder(): (
 
 // returns all the transactions for the current chain
 export function useAllTransactions(): { [txHash: string]: TransactionDetails } {
-  const { chainId } = useActiveWeb3React()
+  const { chainId } = useActiveCaverJsReact()
 
   const state = useSelector<AppState, AppState['transactions']>((s) => s.transactions)
 

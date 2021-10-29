@@ -4,7 +4,7 @@ import styled from 'styled-components'
 import { Credentials, StringTranslations } from '@crowdin/crowdin-api-client'
 import { LangType } from '@pancakeswap-libs/uikit'
 import Popups from '../components/Popups'
-import Web3ReactManager from '../components/Web3ReactManager'
+import CaverJsReactManager from '../components/CaverJsReactManager'
 import { RedirectDuplicateTokenIds, RedirectOldAddLiquidityPathStructure } from './AddLiquidity/redirects'
 import { RedirectOldRemoveLiquidityPathStructure } from './RemoveLiquidity/redirects'
 import AddLiquidity from './AddLiquidity'
@@ -135,7 +135,7 @@ export default function App() {
               <Menu>
                 <BodyWrapper>
                   <Popups />
-                  <Web3ReactManager>
+                  <CaverJsReactManager>
                     <Switch>
                       <Route exact strict path="/swap" component={Swap} />
                       <Route exact strict path="/find" component={PoolFinder} />
@@ -150,7 +150,7 @@ export default function App() {
 
                       <Route component={RedirectPathToSwapOnly} />
                     </Switch>
-                  </Web3ReactManager>
+                  </CaverJsReactManager>
                   <Marginer />
                 </BodyWrapper>
               </Menu>

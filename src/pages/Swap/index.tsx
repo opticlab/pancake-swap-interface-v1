@@ -20,7 +20,7 @@ import SafeMoonWarningModal from 'components/SafeMoonWarningModal'
 import ProgressSteps from 'components/ProgressSteps'
 
 import { INITIAL_ALLOWED_SLIPPAGE } from 'constants/index'
-import { useActiveWeb3React } from 'hooks'
+import { useActiveCaverJsReact } from 'hooks'
 import { useCurrency } from 'hooks/Tokens'
 import { ApprovalState, useApproveCallbackFromTrade } from 'hooks/useApproveCallback'
 import { useSwapCallback } from 'hooks/useSwapCallback'
@@ -69,7 +69,7 @@ const Swap = () => {
     })
   }
 
-  const { account } = useActiveWeb3React()
+  const { account } = useActiveCaverJsReact()
   const theme = useContext(ThemeContext)
 
   const [isExpertMode] = useExpertModeManager()

@@ -1,6 +1,6 @@
 import React, { useMemo } from 'react'
 import { CheckmarkCircleIcon, ErrorIcon, Flex, LinkExternal, Text, Modal, Button } from '@pancakeswap-libs/uikit'
-import { useActiveWeb3React } from 'hooks'
+import { useActiveCaverJsReact } from 'hooks'
 import { getBscScanLink } from 'utils'
 import { isTransactionRecent, useAllTransactions } from 'state/transactions/hooks'
 import { TransactionDetails } from 'state/transactions/reducer'
@@ -31,7 +31,7 @@ const getRowStatus = (sortedRecentTransaction: TransactionDetails) => {
 }
 
 const RecentTransactionsModal = ({ onDismiss = defaultOnDismiss, translateString }: RecentTransactionsModalProps) => {
-  const { account, chainId } = useActiveWeb3React()
+  const { account, chainId } = useActiveCaverJsReact()
   const allTransactions = useAllTransactions()
 
   // Logic taken from Web3Status/index.tsx line 175

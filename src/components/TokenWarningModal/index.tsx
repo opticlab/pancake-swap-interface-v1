@@ -5,7 +5,7 @@ import React, { useCallback, useMemo, useState } from 'react'
 import styled from 'styled-components'
 import { AlertTriangle } from 'react-feather'
 import useI18n from 'hooks/useI18n'
-import { useActiveWeb3React } from '../../hooks'
+import { useActiveCaverJsReact } from '../../hooks'
 import { useAllTokens } from '../../hooks/Tokens'
 import { getBscScanLink, shortenAddress } from '../../utils'
 import { ExternalLink } from '../Shared'
@@ -39,7 +39,7 @@ interface TokenWarningCardProps {
 }
 
 function TokenWarningCard({ token }: TokenWarningCardProps) {
-  const { chainId } = useActiveWeb3React()
+  const { chainId } = useActiveCaverJsReact()
   const TranslateString = useI18n()
   const tokenSymbol = token?.symbol?.toLowerCase() ?? ''
   const tokenName = token?.name?.toLowerCase() ?? ''

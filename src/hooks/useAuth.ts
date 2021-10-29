@@ -1,10 +1,10 @@
 import { useCallback } from 'react'
-import { useWeb3React, UnsupportedChainIdError } from '@web3-react/core'
+import { useCaverJsReact, UnsupportedChainIdError } from '@sixnetwork/caverjs-react-core'
 import { NoBscProviderError } from '@binance-chain/bsc-connector'
 import {
-  NoEthereumProviderError,
+  NoKlaytnProviderError,
   UserRejectedRequestError as UserRejectedRequestErrorInjected,
-} from '@web3-react/injected-connector'
+} from '@sixnetwork/caverjs-react-injected-connector'
 import {
   UserRejectedRequestError as UserRejectedRequestErrorWalletConnect,
   WalletConnectConnector,
@@ -14,7 +14,7 @@ import useToast from 'hooks/useToast'
 import { connectorsByName } from 'connectors'
 
 const useAuth = () => {
-  const { activate, deactivate } = useWeb3React()
+  const { activate, deactivate } = useCaverJsReact()
   const { toastError } = useToast()
 
   const login = useCallback((connectorID: ConnectorNames) => {
@@ -24,7 +24,7 @@ const useAuth = () => {
         window.localStorage.removeItem(connectorLocalStorageKey)
         if (error instanceof UnsupportedChainIdError) {
           toastError('Unsupported Chain Id', 'Unsupported Chain Id Error. Check your chain Id.')
-        } else if (error instanceof NoEthereumProviderError || error instanceof NoBscProviderError) {
+        } else if (error instanceof NoKlaytnProviderError || error instanceof NoBscProviderError) {
           toastError('Provider Error', 'No provider was found')
         } else if (
           error instanceof UserRejectedRequestErrorInjected ||
